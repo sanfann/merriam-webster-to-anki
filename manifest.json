@@ -1,6 +1,6 @@
 {
   "name": "Merriam-Webster to Anki",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Look up a word in Merriam-Webster's Learner's Dictionary and add a card to anki",
   "content_scripts": [
     {
