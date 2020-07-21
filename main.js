@@ -1,17 +1,18 @@
 browser.storage.sync.get().then((config) => {
-  window.ondblclick = function (e) {
+  document.ondblclick = function (e) {
     const sel = (document.selection && document.selection.createRange().text) ||
       (window.getSelection && window.getSelection().toString());
     fetch(`https://www.dictionaryapi.com/api/v3/references/learners/json/${sel}?key=${config.key}`)
     .then(response => response.json())
     .then(data => {
       const content = convertToContent(data, sel);
-      popDiv(e.x, e.y, content);
+      popDiv(e.clientX, e.clientY, content);
     });
   };
   
-  window.onclick = function(e) {
-    if (e.target.className != 'popup') {
+  document.onclick = function(e) {
+    console.log(e.target);
+    if (!e.target.closest('.popup')) {
       document.querySelectorAll(".popup").forEach(popup => document.body.removeChild(popup));
     }
   }
@@ -123,9 +124,8 @@ browser.storage.sync.get().then((config) => {
     const popup = document.createElement("div"); 
     popup.className = 'popup';
     popup.appendChild(content);  
-    popup.style.top = `${y-100}px`;
-    popup.style.left = `${x}px`;
-    popup.style.position = 'absolute';
+    popup.style.top = `${y-90}px`;
+    popup.style.left = `${x-25}px`;
     document.body.appendChild(popup); 
   }
   

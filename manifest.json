@@ -1,6 +1,6 @@
 {
   "name": "Merriam-Webster to Anki",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Look up a word in Merriam-Webster's Learner's Dictionary and add a card to anki",
   "content_scripts": [
     {
@@ -16,8 +16,7 @@
     "storage",
     "notifications",
     "https://www.dictionaryapi.com/api/v3/references/learners/json/",
-    "http://localhost/*",
-    "moz-extension://*/main.js"
+    "http://localhost/*"
   ],
   "options_ui": {
     "page": "settings/options.html"

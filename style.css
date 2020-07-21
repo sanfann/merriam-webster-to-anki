@@ -10,6 +10,7 @@
     background-color:rgb(240,240,240);
     border:2px solid grey;
     z-index:100000000000000000;
+    position:fixed;
 }
 
 span.def {
