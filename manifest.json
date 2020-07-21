@@ -1,0 +1,33 @@
+{
+  "name": "Merriam-Webster to Anki",
+  "version": "1.0",
+  "description": "Look up a word in Merriam-Webster's Learner's Dictionary and add a card to anki",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["main.js"],
+      "css": ["style.css"],
+      "all_frames": true
+    }
+  ],
+  "manifest_version": 2,
+  "permissions": [
+    "webRequest",
+    "storage",
+    "notifications",
+    "https://www.dictionaryapi.com/api/v3/references/learners/json/",
+    "http://localhost/*",
+    "moz-extension://*/main.js"
+  ],
+  "options_ui": {
+    "page": "settings/options.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "merriam-webster-to-anki@test.com"
+    }
+  },
+  "web_accessible_resources": [
+    "anki-icon.png"
+  ]
+}

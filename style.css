@@ -1,0 +1,25 @@
+.popup
+{
+    margin:100px auto;
+    width:500px;
+    height:400px;
+    overflow: auto;
+    font-family:verdana;
+    font-size:18px;
+    padding:10px;
+    background-color:rgb(240,240,240);
+    border:2px solid grey;
+    z-index:100000000000000000;
+}
+
+span.def {
+    color: blue;
+}
+
+span.wsgram {
+    color: gray;
+}
+
+span.vis {
+    color: gray;
+}
